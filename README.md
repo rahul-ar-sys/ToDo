@@ -87,10 +87,10 @@ To access the API via http://your_domain.com instead of http://server_ip:4000, r
 docker-compose -f nginx-compose.yml up -d
 ```
 
-📜 License
+### 📜 License
 This project is open-source under the MIT License.
 
-🤝 Contributing
+### 🤝 Contributing
 Feel free to submit pull requests or open issues!
 
 ### 📞 Contact
