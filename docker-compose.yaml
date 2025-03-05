@@ -1,0 +1,26 @@
+services:
+  mongodb:
+    image: mongo:6
+    container_name: todo-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+  api:
+    build: .
+    container_name: todo-api
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: "mongodb://admin:password@mongodb:27017/todoapp?authSource=admin"
+
+volumes:
+  mongo-data:
+
+
